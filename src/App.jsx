@@ -23,12 +23,12 @@ function App() {
   };
 
   return (
-    <div className=" mt-10 max-w-6xl mx-auto pt-20 shadow-xl">
+    <div className=" mt-10 max-w-6xl mx-auto pt-20 ">
       <div className="flex max-w-4xl mx-auto gap-30 ">
-        <div className="mb-30 w-100 ">
+        <div className="hidded lg:block mb-30 w-100 ">
           <Slider {...settings}>
             <div>
-              <img src="public/images/first.jpg" className="h-100 w-100"></img>
+              <img src="public/images/second.jpg" className="h-100 w-100"></img>
             </div>
             <div>
               <img src="public/images/second.jpg" className="h-100 w-100"></img>
@@ -53,7 +53,7 @@ function App() {
                 },
               ]}
             >
-              <Input type="name" />
+              <Input type="name" placeholder="Enter your name" />
             </Form.Item>
 
             <Form.Item
@@ -66,7 +66,7 @@ function App() {
                 },
               ]}
             >
-              <Input type="password" />
+              <Input type="password" placeholder="Enter your password" />
             </Form.Item>
             <Form.Item
               label="Email"
@@ -78,7 +78,7 @@ function App() {
                 },
               ]}
             >
-              <Input type="email" />
+              <Input type="email" placeholder="Enter your email" />
             </Form.Item>
 
             <Form.Item name="remember" valuePropName="checked" label={null}>

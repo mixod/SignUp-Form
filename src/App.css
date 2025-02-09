@@ -1,13 +1,14 @@
 .border {
-  border: 1px solid black;
   width: fit-content;
   padding: 40px;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(33deg, #8ec5fc 0%, #f7ecf7 100%);
 }
 html {
-  background-image: linear-gradient(
-    89.6deg,
-    rgba(254, 255, 194, 1) -0.1%,
-    rgba(255, 210, 165, 1) 37.7%,
-    rgba(211, 140, 173, 1) 101%
-  );
+  background: #373b44;
+  background: -webkit-linear-gradient(to right, #4286f4, #373b44);
+  background: linear-gradient(to right, #4286f4, #373b44);
+}
+.border:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
 }
