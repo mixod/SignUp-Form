@@ -43,8 +43,8 @@ function App() {
             onFinish={submit}
             className="flex flex-col gap-2 border text-white "
           >
+            <div className="text-black">Sign Up Here!!</div>
             <Form.Item
-              label="Username "
               name="username"
               rules={[
                 {
@@ -53,11 +53,14 @@ function App() {
                 },
               ]}
             >
-              <Input type="name" placeholder="Enter your name" />
+              <Input
+                type="name"
+                placeholder="Enter your name "
+                style={{ width: "250px" }}
+              />
             </Form.Item>
 
             <Form.Item
-              label="Password"
               name="password"
               rules={[
                 {
@@ -69,7 +72,6 @@ function App() {
               <Input type="password" placeholder="Enter your password" />
             </Form.Item>
             <Form.Item
-              label="Email"
               name="email"
               rules={[
                 {
