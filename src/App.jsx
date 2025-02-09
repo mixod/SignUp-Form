@@ -5,7 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Button, Checkbox, Form, Input } from "antd";
 import "./App.css";
+import { useState } from "react";
 function App() {
+  const [data, setData] = useState([]);
   var settings = {
     dots: true,
     infinite: true,
@@ -13,18 +15,49 @@ function App() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  async function Get() {
-    const response = await axios.get("https://fakestoreapi.com/carts");
-    console.log(response);
-  }
   const submit = (values) => {
     console.log(values);
     Get();
+    post(values);
+  };
+
+  async function Get() {
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const post = async (values) => {
+    try {
+      const response = await axios.post(
+        "https://fakestoreapi.com/products",
+        {
+          title: values.name,
+          price: 29.99,
+          category: "electronics",
+          description: "Sample product description",
+          image: "https://via.placeholder.com/150",
+        },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      setData(response);
+      console.log("res:", response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div className=" mt-10 max-w-6xl mx-auto pt-20 ">
-      <div className="flex max-w-4xl mx-auto gap-30 ">
+      <div className="flex max-w-4xl mx-auto gap-10 ">
         <div className="hidded lg:block mb-30 w-100 ">
           <Slider {...settings}>
             <div>
